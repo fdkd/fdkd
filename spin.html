@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spin</title>
+    
+    <script>
+        const max = 4;
+        let count = 1;
+        
+        function roll() {
+            count = count % max;
+            count++;
+
+            const tag = document.querySelector("#Talon");
+            const counter = "0" + count
+            tag.src = "spin/Talon" + counter.slice(-2) + ".jpg";
+        }
+            window.onload = function() {
+            setInterval(roll, 250);
+        }
+    </script>
+</head>
+<body>
+    <img id="Talon" width="585" heigt="650" src="spin/Talon01.jpg">
+</body>
+</html>
